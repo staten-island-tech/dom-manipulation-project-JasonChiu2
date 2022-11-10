@@ -1,1 +1,3 @@
-const DOMSelectors = {};
+const DOMSelectors = {
+  card: document.getElementById("#cards"),
+};
