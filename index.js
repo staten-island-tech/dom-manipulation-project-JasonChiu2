@@ -1,3 +1,5 @@
 const DOMSelectors = {
-  card: document.getElementById("#cards"),
+  artist: document.getElementsByClassName("artist"),
+  album: document.getElementsByClassName("album"),
 };
+console.log(DOMSelectors.artist, DOMSelectors.album);
