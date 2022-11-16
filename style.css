@@ -8,7 +8,7 @@ body,
 }
 h1 {
   font-size: 5rem;
-  margin: auto;
+  margin: 20px auto 30px auto;
   width: 50%;
   padding: 10px;
 }

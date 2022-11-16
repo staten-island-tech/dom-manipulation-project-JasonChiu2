@@ -1,5 +1,7 @@
 const DOMSelectors = {
   artist: document.getElementsByClassName("artist"),
   album: document.getElementsByClassName("album"),
+  button: document.getElementById("btn"),
 };
-console.log(DOMSelectors.artist, DOMSelectors.album);
+
+function CreateCard() {}
