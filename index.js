@@ -1,15 +1,23 @@
 const DOMSelectors = {
-  artist: document.getElementsByClassName("artist"),
-  album: document.getElementsByClassName("album"),
+  artist: document.getElementById("artist"),
+  album: document.getElementById("album"),
   button: document.getElementById("btn"),
-  name: document.getElementsByClassName("name"),
+  name: document.getElementById("name"),
   form: document.querySelector("#form"),
+  container: document.getElementByClassName("container"),
 };
 
-DOMSelectors.form.addEventListener("submit", function (Event) {
-  Event.preventDefault(refresh);
-  let artist = DOMSelectors.artist.value;
-  let album = DOMSelectors.album.value;
+DOMSelectors.form.addEventListener("submit", function () {
+  event.preventDefault();
+  let box = {};
+  box.artist = document.getElementById("artist");
+  box.album = document.getElementById("album");
+  box.name = document.getElementById("name");
+  console.log(box);
+});
+
+DOMSelectors.form.addEventListener("submit", function () {
   let name = DOMSelectors.name.value;
-  console.log(Event);
+  console.log(name);
+  DOMSelectors.container.insertAdjacentHTML("beforeend", `<p>${name}</p>`);
 });
