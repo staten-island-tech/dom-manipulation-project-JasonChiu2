@@ -21,3 +21,12 @@ h1 {
 #btn {
   font-size: 3rem;
 }
+.card {
+  font-size: 3rem;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.album-cover {
+  width: 10%;
+}
