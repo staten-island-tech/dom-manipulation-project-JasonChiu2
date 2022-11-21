@@ -5,42 +5,48 @@ const DOMSelectors = {
   name: document.getElementById("name"),
   form: document.querySelector("#form"),
   container: document.querySelector(".container"),
-  remove: document.querySelectorAll("#remove"),
 };
 
-DOMSelectors.form.addEventListener("submit", function () {
+function createObject() {
   event.preventDefault();
   let box = {};
   box.artist = document.getElementById("artist");
   box.album = document.getElementById("album");
   box.name = document.getElementById("name");
-});
+}
 
-DOMSelectors.form.addEventListener("submit", function () {
+function insert() {
   let artist = DOMSelectors.artist.value;
   let album = DOMSelectors.album.value;
   let name = DOMSelectors.name.value;
   DOMSelectors.container.insertAdjacentHTML(
-    "beforeend",
+    "afterbegin",
     `<div class=card>
     <img src="https://m.media-amazon.com/images/I/51WDisP1+DL._SY580_.jpg" alt="Weezer Blue Album" class=album-cover>
     <p>Hello, my name is ${name} and I am currently listening to ${album} by ${artist}.</p>
-    <button onclick="remove()" id=remove>Remove</button>
+    <button id=remove>Remove</button>
   </div>>`
   );
-});
+}
 
-DOMSelectors.form.addEventListener("submit", function () {
+function clear() {
   DOMSelectors.artist.value = "";
   DOMSelectors.album.value = "";
   DOMSelectors.name.value = "";
-});
+}
 
 function remove() {
-  let remove = document.querySelectorAll("#remove");
+  const remove = Array.from(document.querySelectorAll("#remove"));
   remove.forEach((button) => {
-    button.addEventListener("submit", function () {
-      remove.parentElement.remove();
+    button.addEventListener("click", function () {
+      this.parentElement.remove();
     });
   });
 }
+
+DOMSelectors.form.addEventListener("submit", function () {
+  createObject();
+  insert();
+  clear();
+  remove();
+});
