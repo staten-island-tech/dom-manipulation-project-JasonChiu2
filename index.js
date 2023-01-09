@@ -25,7 +25,7 @@ function insert() {
     <img src="https://m.media-amazon.com/images/I/51WDisP1+DL._SY580_.jpg" alt="Weezer Blue Album" class=album-cover>
     <p>Hello, my name is ${name} and I am currently listening to ${album} by ${artist}.</p>
     <button id=remove>Remove</button>
-  </div>>`
+  </div>`
   );
 }
 
